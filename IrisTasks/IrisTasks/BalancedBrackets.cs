@@ -9,6 +9,7 @@ internal class BalancedBrackets
         { ']', '[' },
         { '}', '{' }
     };
+
     private Stack<char> brackets = new Stack<char>();
 
     public bool IsBalanced(string input)

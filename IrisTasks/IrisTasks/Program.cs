@@ -2,9 +2,12 @@
 
 using IrisTasks;
 
+const string BALANCED = "Balanced";
+const string NOT_BALANCED = "Not Balanced";
+
 var balancedBrackets = new BalancedBrackets();
 var testExpressionOne = "[()]{}{[()()]()}";
 var testExpressionTwo = "[(])";
 
-Console.WriteLine($"Result of test epression one is {balancedBrackets.IsBalanced(testExpressionOne)}");
-Console.WriteLine($"Result of test epression two is {balancedBrackets.IsBalanced(testExpressionTwo)}");
+Console.WriteLine(balancedBrackets.IsBalanced(testExpressionOne) ? BALANCED : NOT_BALANCED);
+Console.WriteLine(balancedBrackets.IsBalanced(testExpressionTwo) ? BALANCED : NOT_BALANCED);
