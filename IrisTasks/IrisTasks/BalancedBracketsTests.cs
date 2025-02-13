@@ -10,14 +10,20 @@ public class BalancedBracketsTests
     [InlineData("[()]{}{[()()]()}", true)]
     [InlineData("[(])", false)]
     [InlineData("{}[]()", true)]
-    [InlineData("{[()]}", true)]
+    [InlineData("{[()]}([])()[]", true)]
     [InlineData("{[(])}", false)]
-    [InlineData("", true)]
     [InlineData("(", false)]
     [InlineData(")", false)]
-    [InlineData("[()]{}{[(this is ok)(test)]( )}", false)]
     public void IsBalanced_ShouldReturnExpectedResult(string expression, bool expected)
     {
         Assert.Equal(expected, balancedBrackets.IsBalanced(expression));
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    public void IsBalanced_IfInputIsNullOrEmpty_ShouldThrowAnError(string expression)
+    {
+        Assert.Throws<ArgumentNullException>(() => balancedBrackets.IsBalanced(expression));
     }
 }

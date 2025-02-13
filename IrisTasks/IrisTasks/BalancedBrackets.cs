@@ -25,11 +25,6 @@ internal class BalancedBrackets
 
         foreach (var ch in input)
         {
-            if (!bracketPairs.ContainsKey(ch) && !bracketPairs.Values.Contains(ch))
-            {
-                continue;
-            }
-
             if (bracketPairs.Values.Contains(ch))
             {
                 brackets.Push(ch);
